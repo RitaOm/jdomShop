@@ -1,0 +1,78 @@
+.container {
+	width: 70%;
+	margin: 100px auto;
+	border: 3px solid #CFCDCD;
+	padding: 40px;
+	min-height: 500px;
+}
+
+.content {
+	margin-left: 15px;
+}
+
+.href {
+	margin: 20px 0;
+}
+
+.href {
+	margin: 20px 0;
+}
+
+.goodsList-div {
+	padding: 10px;
+}
+
+.goodsList-table td.price {
+	width: 28%;
+}
+
+.goodsList-table {
+	margin-left: 5%;
+}
+
+.goodsList-table td {
+	width: 18%;
+}
+
+.goodsList-table td.price input {
+	width: 40%;
+}
+
+.goodsList-table input {
+	width: 100%;
+}
+
+.goodsList-table input:disabled {
+	background: #DCDCDC;
+}
+
+.goods-button-update {
+	margin-left: -47%;
+	margin-top: 25px;
+}
+
+.goods-button-back {
+	margin-left: 5%;
+	margin-top: -40px;
+}
+
+.goods-button-add {
+	margin-top: -40px;
+	margin-left: 40%;
+}
+
+.red {
+	border: 2px solid red;
+}
+
+.addpage-submit-save {
+	padding-top: 20px;
+}
+
+.addpage-submit-back {
+	margin-top: -53px;
+}
+
+.error {
+	color: red;
+}

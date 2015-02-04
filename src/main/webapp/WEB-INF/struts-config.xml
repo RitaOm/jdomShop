@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="productForm"
+			type="com.epam.testapp.presentation.form.ProductForm" />
+	</form-beans>
+
+	<action-mappings>
+	
+		<action path="/Categories" name="productForm"
+			type="com.epam.testapp.presentation.action.ProductAction"
+			parameter="categoryList">
+			<forward name="failure" path="/pages/error.jsp" />
+			<forward name="success" path="/pages/categories.jsp" />
+		</action>
+
+		<action path="/Category" name="productForm"
+			type="com.epam.testapp.presentation.action.ProductAction"
+			parameter="subcategoryList">
+			<forward name="failure" path="/pages/error.jsp" />
+			<forward name="success" path="/pages/subcategories.jsp" />
+		</action>
+
+		<action path="/Subcategory" name="productForm"
+			type="com.epam.testapp.presentation.action.ProductAction"
+			parameter="goodsList">
+			<forward name="failure" path="/pages/error.jsp" />
+			<forward name="success" path="/pages/goods.jsp" />
+		</action>
+		
+		<action path="/AddNewGood" name="productForm"
+			type="com.epam.testapp.presentation.action.ProductAction"
+			parameter="goToAddPage">
+			<forward name="success" path="/pages/add.jsp" />
+		</action>
+		
+		<action path="/UpdateGoods" name="productForm"
+			type="com.epam.testapp.presentation.action.ProductAction" 
+			parameter="updateGoods">
+			<forward name="failure" path="/pages/error.jsp" />
+		</action>
+		
+		<action path="/SaveGood" name="productForm"
+			type="com.epam.testapp.presentation.action.ProductAction"
+			parameter="saveGood">
+			<forward name="failure" path="/pages/error.jsp" />
+			<forward name="not_valid" path="/pages/add.jsp" />
+		</action>
+	</action-mappings>
+
+</struts-config>
+

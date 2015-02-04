@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/products"
+	xmlns:tns="http://www.example.org/products" elementFormDefault="qualified">
+
+	<element name="products">
+		<complexType>
+			<sequence>
+				<element name="category" type="tns:Category" minOccurs="1"
+					maxOccurs="unbounded" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<complexType name="Category">
+		<sequence>
+			<element name="subcategory" type="tns:Subcategory" maxOccurs="unbounded" />
+		</sequence>
+		<attribute name="category_name" type="string" use="required" />
+	</complexType>
+
+	<complexType name="Subcategory">
+		<sequence>
+			<element name="good" type="tns:Good" minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+		<attribute name="subcategory_name" type="string" use="required" />
+	</complexType>
+
+	<complexType name="Good">
+		<sequence>
+			<element name="producer" type="string" />
+			<element name="model">
+				<simpleType>
+					<restriction base="string">
+						<pattern value="[a-zA-Z]{2}[\d]{3}" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="date">
+				<simpleType>
+					<restriction base="string">
+						<pattern value="(0?[1-9]|[12]\d|3[01])\-(0?[1-9]|[1][012])\-\d{4}" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="color" type="string" />
+			<choice>
+				<element name="price" type="float" />
+				<element name="not_in_stock" type="string" />
+			</choice>
+		</sequence>
+	</complexType>
+
+</schema>
